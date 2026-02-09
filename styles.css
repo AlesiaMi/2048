@@ -1,0 +1,113 @@
+body{
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fafafa;
+    overflow: hidden;
+}
+
+.game-container{
+    width: 335px;
+    height: 335px;
+    border: 1px solid #ccc;
+}
+
+.game-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.grid-cell{
+    width: 80px;
+    height: 80px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+.score-container{
+    width: 335px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.restart-game{
+    margin-top: 20px;
+    pad: 10px 15px;
+    cursor: pointer;
+}
+
+.game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-cell[data-value]{
+    transition: background-color .2s;
+}
+
+.new-tile{
+    animation: spawntile .3s;
+}
+
+@keyframes spawntile{
+    from{
+        opacity: 0;
+        transform: scale(.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.grid-cell[data-value="2"]{
+    background-color: #ffb3b3;
+}
+.grid-cell[data-value="4"]{
+    background-color: #99c9ff;
+}
+.grid-cell[data-value="8"]{
+    background-color: #85e6a1;
+}
+.grid-cell[data-value="16"]{
+    background-color: #ffd866;
+}
+.grid-cell[data-value="32"]{
+    background-color: #ff9f6e;
+}
+.grid-cell[data-value="64"]{
+    background-color: #66b5ff;
+}
+.grid-cell[data-value="128"]{
+    background-color: #ffcc33;
+}
+.grid-cell[data-value="256"]{
+    background-color: #52e0d1;
+}
+.grid-cell[data-value="512"]{
+    background-color: #ff7fbd;
+}
+.grid-cell[data-value="1024"]{
+    background-color: #a48cff;
+}
+.grid-cell[data-value="2048"]{
+    background-color: #ff6f61;
+}
+.grid-cell[data-value="4096"]{
+    background-color: #8c8c8c;
+}
